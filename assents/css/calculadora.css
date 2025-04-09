@@ -1,0 +1,55 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: black;
+    display: grid;
+    place-items: center;/*alinea automatica mente el objeto(es como utilizar el justify-items + aling-items)*/
+}
+.cont{/*contenedor de la calculadora*/
+    background-color: orange;
+    color: black;
+    width: 400px;
+    max-width: 100%;/*se asegura que no sobre pase el tamaño del contenedor*/
+    padding: 2rem;/*mejora la adactavilidad del "tamaño" al pasar de diferentes dispositivos, mejor que el px*/
+    border-radius: 2rem;
+    display: grid;/*hace a todos los elementos dentro bloques que ocupan todo lo largo del contenedor*/
+    grid-template-columns: repeat(4, 1fr);/*define el numero de columnas que se dividiran los elmentos, el primer valor define el numero de columnas*/
+    gap: 0.5rem;/*espacion entre lo elementos*/
+    box-shadow: 10px 10px 50px 5px blue;/*genera una sombra al contenedor, el primer valor mueve la sombra de izquierda a derecha, el segundo de arriba hacia abajo, el tercero modifica el degradado y el ultimo el tamaño de la misma*/
+}
+.pant{/*pantalla de la calculadora*/
+    grid-column:1 / 5;/*el primer valor toma desde que columna inicia y el segundo asta que otra columna llegara(en este caso cuenta un numero menos es decir si quiero que llegue a 4 columnas pondria el 5)*/
+    background-color: violet;
+    padding: 1rem;/*tamaño que tomara la pantalla*/
+    font-size: 2rem;/*ajusta el tamaño de el elemento*/
+    text-align: right;
+    border-radius: 1.5rem;
+    margin-bottom: 1.5rem;/*separa la pantalla de los demas botones*/
+    font-family: monospace;/*da el estilo de numero*/
+    font-weight: bold;
+}
+.btn{/*botones de la calculadora*/
+    background-color: blue;
+    color: white;
+    border: 0;
+    padding: 1.5rem .5rem;/*"modifica" el tamaño de los botones*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: .5rem;
+    cursor: pointer;/*cambia el estilo del cursor a una "mano"*/
+}
+.btn:hover{/*cambia el color(en este caso) del objeto cuando se pasa el cursor por encima*/ 
+    background-color: burlywood;
+}
+#ce{
+    grid-column: span 3;/*span permite al elemnto expandirse por varias columnas*/
+}
+#igu{
+    grid-row:span 2;
+    background-color: gray;
+}
+#igu:hover{
+    background-color: pink;
+}
